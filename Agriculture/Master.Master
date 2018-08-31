@@ -1,0 +1,50 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="Agriculture.Master" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .parent-size{
+            width: 100%;
+        }
+        .center-text{
+            text-align: center;
+        }
+        .borderless{
+            border:0px;
+        }
+        .auto-style1 {
+            font-size: small;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <table class="parent-size borderless">
+            <tr class="borderless">
+                <td class="center-text borderless">
+                    <asp:Button ID="btnData" runat="server" BackColor="#CCFFCC" BorderStyle="None" Font-Bold="True" Height="50px" OnClick="btnData_Click" Text="Data" Width="49%" />
+                    <asp:Button ID="btnAction" runat="server" BackColor="#FFCCFF" BorderStyle="None" Font-Bold="True" Height="50px" OnClick="btnAction_Click" Text="Action" Width="49%" />
+                    <br />
+                    ****************************************************************************************************</td>
+            </tr>
+            <tr class="borderless">
+                <td class="borderless">
+                    <asp:ContentPlaceHolder ID="cph" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr class="borderless">
+                <td class="center-text borderless"><strong><span class="auto-style1">Infocomm Technology, Ngee Ann Polytechnic</span><br class="auto-style1" />
+                    <span class="auto-style1">2018</span><br class="auto-style1" />
+                    <span class="auto-style1">Jet </span><span class="auto-style1" style="color: rgb(0, 0, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">●</span><span class="auto-style1"> Robin </span>
+                    <span class="auto-style1" style="color: rgb(0, 0, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">● </span><span class="auto-style1">Ruo Yan</span></strong></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
