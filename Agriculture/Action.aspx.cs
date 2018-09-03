@@ -8,93 +8,57 @@ using System.Web.UI;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Diagnostics;
+using System.IO;
 
 namespace Agriculture
 {
     public partial class Action : System.Web.UI.Page
     {
-        //Initialise properties
-        Brick brick;
-        OutputPort portA = OutputPort.A;
-        OutputPort portB = OutputPort.B;
-        OutputPort portC = OutputPort.C;
-        OutputPort portD = OutputPort.D;
-
-        
-        protected async void Page_Load(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)
         {
-            //Define and connect to brick
-            brick = new Brick(new UsbCommunication());
-            Debug.WriteLine(brick.Ports[InputPort.One].SIValue);
-            await brick.ConnectAsync();
+            Stop();
+            UpdateStatus();
         }
 
-        protected void btnTest_Click(object sender, EventArgs e)
+        protected void btnStart_Click(object sender, EventArgs e)
         {
-            Turn(portA, 100,1000);
+            Start();
+            UpdateStatus();
         }
 
-        protected void btnTest2_Click(object sender, EventArgs e)
+        protected void btnStop_Click(object sender, EventArgs e)
         {
-            Turn(portA, -100,1000);
+            Stop();
+            UpdateStatus();
         }
 
-        //Method to rotate the motor
-        //Note: this is actually slow if you wish to run multiple commands at once.
-        //I hardcoded an example below under this method.
-        protected async void Turn(OutputPort port,int power,uint duration)
+        protected void UpdateStatus()
         {
-            await brick.DirectCommand.TurnMotorAtPowerForTimeAsync(port, power, duration, true);
+            StreamReader reader = new StreamReader("D:\\comm.txt");
+            if (reader.ReadLine() == "stop")
+            {
+                lblMessage.Text = "Status: Offline";
+            }
+            else
+            {
+                lblMessage.Text = "Status: Online";
+            }
+            reader.Close();
         }
         
-        protected async void EfficientTurn()
+        protected void Stop()
         {
-            //These are instructions 
-            brick.BatchCommand.TurnMotorAtPowerForTime(portA, 50, 1000, true);
-            brick.BatchCommand.TurnMotorAtPowerForTime(portB, -50, 1000, true);
-            brick.BatchCommand.TurnMotorAtPowerForTime(portC, 100, 3000, true);
-            brick.BatchCommand.TurnMotorAtPowerForTime(portD, -10, 200, true);
-
-            //This line sends all the instructions together
-            await brick.BatchCommand.SendCommandAsync();
+            StreamWriter writer = new StreamWriter("D:\\comm.txt");
+            writer.WriteLine("stop");
+            writer.Close();
         }
 
-
-
-        /* Am just messing around here.
-        protected async void play()
+        protected void Start()
         {
-            brick.BatchCommand.PlayTone(10,262,500);
-            brick.BatchCommand.PlayTone(10,262,500);
-            brick.BatchCommand.PlayTone(10,294,1000);
-            brick.BatchCommand.PlayTone(10,349,1000);
-            brick.BatchCommand.PlayTone(10,330,2000);
-            brick.BatchCommand.PlayTone(10,262,500);
-            brick.BatchCommand.PlayTone(10,262,500);
-            brick.BatchCommand.PlayTone(10,294,1000);
-
-            brick.BatchCommand.PlayTone(10,262,1000);
-            brick.BatchCommand.PlayTone(10,392,1000);
-            brick.BatchCommand.PlayTone(10,349,2000);
-            brick.BatchCommand.PlayTone(10,262,500);
-            brick.BatchCommand.PlayTone(10,262,500);
-            brick.BatchCommand.PlayTone(10,523,1000);
-            brick.BatchCommand.PlayTone(10,440,1000);
-            brick.BatchCommand.PlayTone(10,349,330);
-
-            brick.BatchCommand.PlayTone(10,294,3000);
-            brick.BatchCommand.PlayTone(10,486,500);
-            brick.BatchCommand.PlayTone(10,466,500);
-            brick.BatchCommand.PlayTone(10,440,1000);
-            brick.BatchCommand.PlayTone(10,349,1000);
-            brick.BatchCommand.PlayTone(10,392,1000);
-            brick.BatchCommand.PlayTone(10,349,2000);
-
-            await brick.BatchCommand.SendCommandAsync();
-
-            //brick.BatchCommand.PlayTone(10,,);
+            StreamWriter writer = new StreamWriter("D:\\comm.txt");
+            writer.WriteLine("start");
+            writer.Close();
         }
-        */
 
     }
 }
