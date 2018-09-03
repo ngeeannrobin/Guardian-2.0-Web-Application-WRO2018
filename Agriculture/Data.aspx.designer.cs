@@ -13,84 +13,93 @@ namespace Agriculture {
     public partial class DataFeed {
         
         /// <summary>
-        /// lblHumiC control.
+        /// btnUpdate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblHumiC;
+        protected global::System.Web.UI.WebControls.Button btnUpdate;
         
         /// <summary>
-        /// lblHumiA control.
+        /// lblHumC control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblHumiA;
+        protected global::System.Web.UI.WebControls.Label lblHumC;
         
         /// <summary>
-        /// lblHumiD control.
+        /// lblHumA control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblHumiD;
+        protected global::System.Web.UI.WebControls.Label lblHumA;
         
         /// <summary>
-        /// lblPresC control.
+        /// lblHumD control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPresC;
+        protected global::System.Web.UI.WebControls.Label lblHumD;
         
         /// <summary>
-        /// lblPresA control.
+        /// lblPreC control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPresA;
+        protected global::System.Web.UI.WebControls.Label lblPreC;
         
         /// <summary>
-        /// lblPresD control.
+        /// lblPreA control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPresD;
+        protected global::System.Web.UI.WebControls.Label lblPreA;
         
         /// <summary>
-        /// lblTempC control.
+        /// lblPreD control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTempC;
+        protected global::System.Web.UI.WebControls.Label lblPreD;
         
         /// <summary>
-        /// lblTempA control.
+        /// lblTemC control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTempA;
+        protected global::System.Web.UI.WebControls.Label lblTemC;
         
         /// <summary>
-        /// lblTempD control.
+        /// lblTemA control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTempD;
+        protected global::System.Web.UI.WebControls.Label lblTemA;
+        
+        /// <summary>
+        /// lblTemD control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTemD;
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="Data.aspx.cs" Inherits="Agriculture.DataFeed" %>
+﻿<%@ Page Async="true" Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="Data.aspx.cs" Inherits="Agriculture.DataFeed" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .right-text{
@@ -31,7 +31,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cph" runat="server">
                 <table class="parent-size">
                     <tr>
-                        <td class="center-text quarter"></td>
+                        <td class="center-text quarter">
+                            <asp:Button ID="btnUpdate" runat="server" OnClick="btnUpdate_Click" Text="Update" />
+                        </td>
                         <td class="center-text quarter"><strong>Current</strong></td>
                         <td class="center-text quarter"><strong>Average</strong></td>
                         <td class="center-text quarter"><strong>Deviation</strong></td>
@@ -41,13 +43,13 @@
                             <strong>Humidity</strong>
                         </td>
                         <td class="center-text quarter">
-                            <asp:Label ID="lblHumiC" runat="server"></asp:Label>
+                            <asp:Label ID="lblHumC" runat="server"></asp:Label>
                         </td>
                         <td class="center-text quarter">
-                            <asp:Label ID="lblHumiA" runat="server"></asp:Label>
+                            <asp:Label ID="lblHumA" runat="server"></asp:Label>
                         </td>
                         <td class="center-text quarter">
-                            <asp:Label ID="lblHumiD" runat="server"></asp:Label>
+                            <asp:Label ID="lblHumD" runat="server"></asp:Label>
                         </td>
                     </tr>
                     <tr>
@@ -55,13 +57,13 @@
                             <strong>Pressure</strong>
                         </td>
                         <td class="center-text quarter">
-                            <asp:Label ID="lblPresC" runat="server"></asp:Label>
+                            <asp:Label ID="lblPreC" runat="server"></asp:Label>
                         </td>
                         <td class="center-text quarter">
-                            <asp:Label ID="lblPresA" runat="server"></asp:Label>
+                            <asp:Label ID="lblPreA" runat="server"></asp:Label>
                         </td>
                         <td class="center-text quarter">
-                            <asp:Label ID="lblPresD" runat="server"></asp:Label>
+                            <asp:Label ID="lblPreD" runat="server"></asp:Label>
                         </td>
                     </tr>
                     <tr>
@@ -69,13 +71,13 @@
                             <strong>Temperature</strong>
                         </td>
                         <td class="center-text quarter">
-                            <asp:Label ID="lblTempC" runat="server"></asp:Label>
+                            <asp:Label ID="lblTemC" runat="server"></asp:Label>
                         </td>
                         <td class="center-text quarter">
-                            <asp:Label ID="lblTempA" runat="server"></asp:Label>
+                            <asp:Label ID="lblTemA" runat="server"></asp:Label>
                         </td>
                         <td class="center-text quarter">
-                            <asp:Label ID="lblTempD" runat="server"></asp:Label>
+                            <asp:Label ID="lblTemD" runat="server"></asp:Label>
                         </td>
                     </tr>
                 </table>
